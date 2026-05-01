@@ -1,0 +1,36 @@
+# Arquivos de Ambiente (Extremamente Crítico)
+.env
+
+# Chaves e Credenciais (Extremamente Crítico)
+credentials/*.json
+*.pem
+*.key
+
+# Dados em Trânsito (Segurança e Privacidade)
+data/
+data/raw/
+data/archive/
+*.csv
+*.xlsx
+*.parquet
+
+# Python e Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes Virtuais
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
