@@ -30,9 +30,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Configurar Chave do Service Account (JSON)
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         run: |
           mkdir -p credentials
-          echo '${{ secrets.GCP_SERVICE_ACCOUNT }}' > credentials/service_account.json
+          echo "$GCP_SA_KEY" > credentials/service_account.json
 
       - name: Executar Pipeline ETL
         env:
