@@ -24,7 +24,11 @@ def main():
     
     logging.info(f"Extração concluída com {arquivos_processados} arquivo(s).")
 
+    # Fase 2: Transformação de Dados (Transform)
     df = data_transformations()
+    if df.empty:
+        logging.info("O DataFrame está vazio. O pipeline não fará o Load e será encerrado com sucesso.")
+        return
     
     logging.info("Iniciando Fase 3: Carga (Load)...")
     upload_to_trusted(df, TRUSTED_SHEET_ID)

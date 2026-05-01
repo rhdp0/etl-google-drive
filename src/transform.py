@@ -117,6 +117,10 @@ def data_transformations():
     logging.info("Iniciando transformação dos dados...")
 
     df = transform_data_to_df()
+    if df.empty:
+        logging.info("Nenhum dado novo para processar. Pulando transformações.")
+        return df
+
     df = check_duplicates(df)
     df = rename_columns(df)
     df = select_columns(df, columns_to_keep)
